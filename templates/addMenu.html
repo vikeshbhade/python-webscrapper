@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content%}
+<div class="container">
+    <h1>Add Item</h1>
+    <form action="{{ url_for('Add_Menu_Item') }}" method="POST">
+        <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Item Name</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="item">
+        </div>
+        <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Price</label>
+        <input type="text" class="form-control" name="price" id="exampleFormControlTextarea1"/>
+        </div>
+        <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Quantity</label>
+        <input type="text" class="form-control" name="qty" id="exampleFormControlTextarea1"/>
+        </div>
+        <input type="submit" class="btn btn-primary btn-sm">
+    </form>
+
+</div>
+{% endblock %}

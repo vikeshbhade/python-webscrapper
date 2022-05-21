@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <a type="button" href="{{url_for('Add_Menu_Item')}}" class="btn btn-primary btn-sm">Add Item</a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Sr. No</th>
+          <th scope="col">Item</th>
+          <th scope="col">Price</th>
+          <th scope="col">Qty(In Gms)</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in items%}
+        <tr>
+          <th scope="row">{{loop.index}}</th>
+          <td>{{ item.item }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.qty }}</td>
+          <td><a href="/order/{{item.id}}">Order</a> | <a href="/delete/{{item.id}}">Delete</a></td>
+        {% endfor %}
+        </tr>
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
